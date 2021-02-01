@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<!-- 
+	# Should also look forward to make a personal dictionary also which can store words that I intend to save.
+	And the words should be saved inside a local file so that I can see how much database has been build and all. (like need to brain strom over it.)
+ -->
+<html>
+	<head> 
+		<meta charset='utf-8'>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Notes</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/main.css">
+	
+	</head>
+	<body   class='site-header' >
+
+		<div>
+			<h1>Fundamentals of Neural Networks</h1>
+
+			<div>
+				<a class="click-me" href="./NNFL-intro.html"​>Previous</a>
+				<a class="click-me" href="./ANN-Supervised.html"​>Next</a>
+			</div>
+
+			<p>Topics to study are: </p>
+
+			<ul>
+				<li>The Artificial neural networks</li>
+				<li>The artificial neuron</li>
+				<li>Bias of a neuron</li>
+<!-- 				<li> Different types of neurons
+					<ul>
+						<li>Linear neurons</li>
+						<li>Binary threshold neurons</li>
+						<li>Rectified linear neurons</li>
+						<li>Sigmoid neurons</li>
+						<li>Stochastic binary neurons</li>
+					</ul>
+				</li> -->
+				<li>Activation functions & different types of activation fucntions
+<!-- 					<ul>
+						<li>Threshold activation function</li>
+						<li>binary threshold signal function</li>
+						<li>Linear threshold signal function</li>
+						<li>Linear  Activation function</li>
+						<li>Nonlinear Activation fucntion</li>
+						<li>Sigmoidal Signal function</li>
+						<li>Gaussian signal function</li>
+					</ul>	 -->	
+				</li>
+				<!-- <li>Threshold logic neuron(TLN) in discrete time </li>
+				<li>Stochastic neurons</li> -->
+				<li>Typical application of Artificial Neural Network (ANN): 
+					<ul>
+						<li>Pattern Recognition</li>
+						<li>Classification</li>
+						<li>Clustering</li>
+						<li>Function Approximation</li>
+					</ul>
+				</li>
+				<li>Basic approach of the working of ANN: 
+					<ul>
+						<li>Training
+							<ul>
+								<li>Supervised training</li>
+								<li>Unsupervised training</li>
+							</ul>
+						</li>
+						<li>Learning
+							<ul>
+								<li>Supervised learning</li>
+								<li>Unsupervised learning</li>
+							</ul>
+						</li>
+						<li>Generalization</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h2>The artificial neural networks</h2>
+			<p>Good afternoon, Fellas !!! Hope you had a nice day before. </p>
+			<p>Today, we are going to study about again neural networks. I know kind off sounds boring but have some patience, interesting things are on their way to here. From this point on we will not be talking about biological neuron anymore. Focus will be on the artificial neural networks.</p>
+			<p>So, let's begin.</p>
+
+			<ul>
+				<li>An artifical neural network is composed of many artificial neurons that are linked together according to a specific network architecture.</li>
+				
+				<li>Signals (action potential) appear at the node's inputs (synapse).</li>
+
+				<li>Each input at the node is multipled by a certain weight, before being added at the node (neuron) to produce an overall activation.</li>
+
+				<li>If the input exceeds a threshold, the node fires, sending signals to other nodes.</li>
+
+			</ul>
+
+			<h2>The artificial neuron</h2>
+
+			<div class="img-container">
+				<img class="img" src="../img/artificialNeuron.jpeg" alt="Artificial Neuron" style="width:750px; height: 350px;">
+			</div>
+			
+			<ul>
+				<li>The neuron is the basic information processing unit of a neural netowrk.</li>
+				<li>It consists of:
+					<ol>
+						<li>A set of synapses or connecting links, each link characterized by a weight: (W k<sub>j</sub>)<br>
+							<p>W<sub>1</sub>,W<sub>2</sub>,..., W<sub>m</sub></p>
+						</li>
+						<li>An adder function (linear combiner) which computes the weight sum of inputs: <br>
+							<p> u = </p>  <!-- Need to add a mathematical formula here, using the code the add formula not the pic.-->
+						</li>
+						<li>Activation functions are mathematical equations that determine the output of a neuron. The function is attached to each neuron in the network, and determines whether it should be activated ("fired") or not, based on whether each neuron's input is relevant for the model's prediction. </li>
+					</ol>
+				</li>
+			</ul>
+
+			<h2>Bias of a neuron</h2>
+			<ul>
+				<li>Bias is an additional parameter in a neuron which is used to adjust the output along with the weighted sum of the inputs to the neuron.</li>
+				<li>It can be thought of as analogous to the role of a constant in a linear function, whereby the line is effectively transposed by the constant value.</li>
+				<li>Bias is a constant which helps the model in a way that it can fit best for the given data. In simpler terms, one can say that bias helps in controlling the value at which activation function will trigger.</li>
+			</ul>
+<!-- 
+			<h2>Different types of neurons</h2>
+			<h3>Linear neuron</h3>
+			<ul>
+				<li></li>
+			</ul> -->
+
+			<h2>Activation function & different types of activation functions</h2>
+			
+			<p>Activation function as mentioned earlier is used to calculate the output response of a neuron.</p>
+
+			<div class="img-container">
+				<img class="img" src="../img/activationFunctionTable.png" alt="Activation Function table" style="width:900px; height: 600px;">
+			</div>
+			
+			<h2>Typical application of Artificial Neural Network (ANN)</h2>
+
+			<h3>Pattern Recognition</h3>
+			<ul>
+				<li> Pattern recognition is the "automated discovery of patterns in a training set".</li>
+				<li> In simple terms, where we have to detect what kind of pattern the given dataset may have, might be helpful for determining some fruitful output.</li>
+				<li> Pattern Recognition is of two types:
+					<ol>
+						<li>Classification</li>
+						<li>Clustering</li>
+					</ol>
+				</li>
+			</ul>
+
+			<h3>Classification</h3>
+			<ul>
+				<li>It is a supervised learning application whose target value is a finite set of classes.</li>
+				<li>In simple terms, where we know that input data (labelled in this case) and we kow the possible output of the algorithm</li>
+				<li> Example: Classification is commonly used in the financial sector. In the era of online transactions where the use of cash has decreased markedly, it is necessary to determine whether movements made through cards are safe. Entities can classify transaction as correct or fradulent using historical data on customer behaviour to detect fraud very accurately.</li>
+			</ul>
+
+			<h3>Clustering</h3>
+			<ul>
+				<li>It is an unsupervised learning, means for this algorithm we only have one set of input data (not labelled), about which we must obtain information, witout previously knowing what the output will be.</li>
+				<li>Example: A well-known application of clustering algorithm are Netflix recommendation systems. Although the company is quite discreet with its algorithm, it is confirmed that there are about 2,00 clusters or communities that have common audio visual tastes. Cluster 290 is the one which includes people who like the series "Lost", "Black Mirror" and "Groundhog Day". Netflix uses these clusters to refine its knowledge of the tastes viewers and tus make better decisions in the creation of new original series.</li>
+			</ul>
+
+			<p>Below mentioned series of images will make meaning of Classification and Clustering more clearer.</p>
+
+
+			<div class="img-container">
+				<img class="img" src="../img/classificationVsClustering.png" alt="classificationVsClustering" style="width:550px; height: 350px;">
+				<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Example of animals dataset to be divided into classification and clustering.</p><br>
+			</div>
+
+			<div class="img-container">
+				<img class="img" src="../img/Classification.png" alt="Classification" style="width:550px; height: 350px;">
+				<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Classification performed on the animals dataset.</p><br>
+			</div>
+
+			<div class="img-container">
+				<img class="img" src="../img/Clustering.png" alt="Clustering" style="width:550px; height: 350px;">
+				<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Clustering performed on the animals dataset.</p><br>
+			</div>
+
+			<h3>Function Approximation</h3>
+			<ul>
+				<li>It is a supervised learning technique for estimating an known underlying function using historical or available observations from the domain. Artificial neural networks learn to approximate a function.</li>
+				<li>In simple terms, function approximation is one in which we want to predict the probable value of the numeric variable for a particular observation.</li>
+				<li>I know you all be thinking that it is confusing, and one thing where to use it? right !!!</li>
+				<li> Here: Approximation looks for certain patterns in similar observations from the past and tries to find how they impact the value of a researched variable</li>
+				<li>Example: 
+					<ul>
+						<li>How much money will my customer spend on a given product in a year ? 
+							<p>In this the company wants to have an approximation of how much their customers will spend on a product in a coming year. Company wants to calculate a particular figure of expenditure a customer will do.</p>
+						</li>
+						<li>What wil the market price apartments be ? 
+							<p> In this the share market expert wants to know the value of a figure, how much will it rise or fall ?</p>
+						</li>
+						<li>How often will production machines malfunction each month ?
+							<p> This is a general prediction of the machines that can be used by hardware manufacturing companies and many other. By monitoring the last some month data of malfunctioning. company intends to know how often the machines will malfunction in the upcoming month.</p>
+						</li>
+					</ul>
+				</li>
+			</ul>
+				<h2>Basic approach of the working of ANN</h2>
+				<h3>Learning </h3>
+				<ul>
+					<li>Once a network has been structured for a particular application, that network is ready to be trained.</li>
+					<li>To start training the initial weights are chosen randomly. Then, the training, learning and all other steps begin.</li>
+					<li>In general there are two approaches to training: Supervised and unsupervised.</li>
+					<li>Supervised training involves a mechanism of providing the network with desired output either by manually 'grading' the network's performance or by providing desired outputs with the inputs.</li>
+					<li>Unsupervised training is where the network has to make sense of the inputs without outside help. </li>
+					<li>However, in the full blowen sense of being truly self learning, it is still just a shining promise that is not fully understood, does not completely work, and thus is relegated to the lab.</li>
+				</ul>
+
+				<h4>Supervised Training</h4>
+				<ul>
+					<li>In supervised training, both the inputs and the outputs are provided. The network then processes the inputs and compares its resulting outputs the desired outputs. </li>
+					<li>Errors are then propagated back through the system, causing the system to adjust the weights which control the network. </li>
+					<li>This process occurs over and over as the weights are continually tweaked.</li>
+					<li>The set of data which enabled the training is called the "training set". During the training of a network the same set of data is processed many times as the connection weights are ever refined.</li>
+					<li>The current commercial tools are used to monitor how well an ANN is converging on the ability to predict the right answer.</li>
+					<li>These tools may allow the training processes to go on for days, stopping only hen the system reaches some statisticaly desired point, or accuracy. However, it maybe possible that some networks never learn. </li>
+					<li>Not learning of the network may be because there is not enough data to enable complete learning.  </li>
+					<li>Ideally, there should be enough data so that part of the data can be held back as a test.</li>
+					<li>Working with many layered networks with multiple nodes, makes the network capable to memorize the data. So to monitor the network to determine if the system is simply memorizing its data in some nonsignificant way, supervised training needs o hold back a set of data to be used to test the system after it has undergone its training. (FYI: memorization is avoided by not having too many processing elements.)</li>
+					<p>Now, you all might be thinking that "if there is some problem while training ? You know like there can be a problem, nothing can be that smooth, no ? Or it maybe possible that the network itself cannot solve a problem that well ?" </p>
+					<p>You are thinking right !! There are some steps which are taken when a problem appears while training a network.</p>
+					<p>Below are some steps that are considered to remove the hinderence to create a successful network: </p>
+					<ul>
+						<li>If a network simply can't solve the problem, the designer then has to review the input and outputs, the number of layers, the number of elements per layer, the connections between the layers, the summation, transfer, and training functions, and even the initial weights themselves. </li>
+						<li>Those changes required to create a successful network constitute a process wherein the "art" of neural networking occurs.</li>
+						<li>Another part of the designer's creativity governs the rules of training. There are many laws (algorithms) used to implement the adaptive feedback required to adjust the weights during training.</li>
+						<li>The most common technique is backward-error propagation, more commonly known as back-propagation. </li>
+						<li>Yet, training is not just a technique. It involves a "feel," and conscious analysis, to insure that the network is not overtrained.</li>
+						<li>Initially, an ANN configures itself with the general statistical trends of the data. Later, it continues to "learn" about other aspects of the data which may be spurious (Outwardly similar or corresponding to something without having its genuine qualities) from a general view point. </li>
+						<li>When finally the system has been correctly trained and no further learning is needed, the weights can, if desired, be "frozen." In some systems this finalized network is then turned into hardware so that it can be fast. Other systems don't lock themselves in but continue to learn while in production use.</li>
+					</ul>
+				</ul>
+				<h4>Unsupervised, or Adaptive Training</h4>
+				<ul>
+					<li>The other type of training is called unsupervised training. In unsupervised training, the network is provided with inputs but not with desired outputs.</li>
+					<li>The system itself must then decide what features it will use to group the input data. This is often referred to as sefl-organized or adaption.</li>
+					<li>At the present time, unsupervised learning is not well understood. This adaptation to the environment is the promise which would enable science fiction types of robots to continually learn on their own as they encounter new situations and new environments.</li>
+					<li>Life is filled with situations where exact training sets do not exist.</li>
+					<li>For example, some of mentioned situations involve military action where new combat techniques and new weapons might be encountered. Because of this unexpected aspect to life and the human desire to be prepared.</li>
+					<li>There continues to have research into, and hope for, this field. Yet, at the present time, the vast bulk of NN work is in systems with supervised learning. FYI: Supervised learning is achieving results.</li>
+					<li>Lots of engineers from different verticals are working on unsupervised training and learning.</li>
+					<li>And most of them has pointed out that the lack of topology in neural network models make today's NN just simple abstractions of the real NN within the brain. Topology is a branch of mathematics that studies how to map from one space to another changing the geometric configuration. As the research continues, more powerful self-learning networks may become possible. But currently, this field remains one that is still in the laboratory.</li>
+				</ul>
+				<h3>Learning</h3>
+				<p>In learning also there are two types: Supervised and unsupervised learning. We are going to study about them in detail in the upcoming content but for now all the basic information in detail is available in the training section above.</p>
+
+				<h3>Generalization</h3>
+				<p>Good afternoon fellas, Its been some time since I have done some topic now. I was busy in some shit soo. Anyways.</p>
+				<p>Lets just dive in: </p>
+				<ul>
+					<li>Whenever we train our own Neural Networks, we need to take care of something called the <a style ="font-weight: bold;">generalization</a> of the Neural Network.</li>
+					<li><a style ="font-weight: bold;"> Generalization</a> in NN means how good a model is at learning from the given data and applying the learnt information elsewhere.</li>
+					<li>When training a NN, there's going to be some data which the NN trains on, there's going to be some data reserved for checking the performance of the NN. If the NN performs well on the data which it has not trained on, one can say it has generalized well on the given data. </li>
+					<li style='font-style: italic;'>Let's understand this with an example: </li>
+					<i><li>Suppose a researcher is training a NN which should tell him if a given image has a dog or not. He assumes he has several pictures of dogs, each dog belonging to a certain breed, and there are 12 total breeds within those pictures.</li>
+					<li>Researcher decided to keep images of 10 breeds of dogs for training and the remaining images of the 2 breeds to be kept aside.</li></i>
+
+					<div class="img-container">
+						<img class="img" src="../img/generalizationExample.png" alt="Generalization of dogs example" style="width:700px; height: 650px;">
+						<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Dogs training testing data split</p><br>
+					</div>
+
+					<i><li>Before going into the Deep Learning side of things, the researcher decided to look at the problem from a human perspective. </li>
+					<li>He considers a human being who has never seen a dog in their entire life (just for the sake of example, obviously). Now, he will show this human the 10 breeds of dogs and tell them that these are dogs.</li>
+					<li>He suspects, after this, if he will shows him the other 2 breeds, will he be able to tell that they are also dogs ? </li>
+					<li>Well hopefully the human should. 10 breeds should be enough to understand and identify the unique features of a dog.</li>
+					<li style="font-weight: bold;">This concept of learning from data and correctly applying the gained knowledge on other data is called generalization</li></i>
+					<li>Researcher came back to deep learning, the main aim of his was to make the NN learn as effectively from the given data as possible.</li>
+					<li>If he successfully makes the NN understand that the other 2 breeds are also dogs, then he has trained a very general neural network and it will perform well in the real world.</li>
+				</ul>
+		
+		</div>
+	</body>
+</html>

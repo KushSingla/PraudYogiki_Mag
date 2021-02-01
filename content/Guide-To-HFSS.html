@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<!-- 
+	# Should also look forward to make a personal dictionary also which can store words that I intend to save.
+	And the words should be saved inside a local file so that I can see how much database has been build and all. (like need to brain strom over it.)
+ -->
+<html>
+	<head> 
+		<meta charset='utf-8'>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Guide</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+		<link rel="stylesheet" href="../css/main.css">
+	
+	</head>
+	<body   class='site-header'>
+
+		<div>
+			<h1>Guide for High Frequency Structure Simulator (HFSS) </h1>
+
+			<div>
+				<a class="click-me" href="./Advantages-And-Disadvantages-of-Microstrip-Patch-Antenna.html"​>Previous</a>
+				<a class="click-me" href="#"​>Next</a>
+			</div>
+
+
+			<p>Topics to study: </p>
+			<ul>
+				<li>HFSS Terms</li>
+				<li>Flow chart todesign RF device model</li>
+				<li>Steps involved in patch antenna designing </li>
+			</ul>
+
+			<h2>HFSS Terms</h2>
+			<div class="img-container">
+				<img class="img" src="../img/#" alt="HFSS terms" style="width:60px; height: 50px;">
+				<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Summed input</p><br>
+			</div>
+
+			<ol>
+				<Li><b>Project manager</b> contains a design tree which lists the structure of the project. It shows the name of the design, design setup, automation (optimization) and design results. </Li>
+				<li><b>Message manager</b> tells about the warnings and errors before beginning of the simulation and during the simulation.</li>
+				<li><b>Property window</b> tells about the model parameters and attributes. It allows user to change the model parameters. </li>
+				<li><b>3D modeller window</b> displays the model the model tree for active design. </li>
+				<Li><b>Toolbar</b> contains the shortcut for the tools that can we use directly. We can use these tools from the menu bar. We can customize toolbar according to frequently used tools. </Li>
+				<li><b>Status bar</b> display the postition of the cursor in the 3D modeller window. It contains coordinate entry field to set coordinates. </li>
+			</ol>
+		
+			<h2>Flow chart to design RF device model</h2>
+			<div class="img-container">
+				<img class="img" src="../img/#" alt="HFSS terms" style="width:60px; height: 50px;">
+				<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Summed input</p><br>
+			</div>
+
+
+			<h2>Steps involved in patch antenna designing</h2>
+
+			<ol>
+				<li>Select File --> New <br>
+
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+					New project will be displayed in project manager 
+				<div class="img-container">
+					<img class="img" src="../img/#" alt="HFSS terms" style="width:60px; height: 50px;">
+					<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Summed input</p><br>
+				</div>
+				</li>
+
+				<li>Insert HFSS design from toolbar <br>
+
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+					New Modeller Window will be openned
+
+					<div class="img-container">
+					<img class="img" src="../img/#" alt="HFSS terms" style="width:60px; height: 50px;">
+					<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Summed input</p><br>
+					</div>
+
+				</li>
+				
+				<li>Select the solution type:
+					<ol>
+						<li>Click HFSS --> solution type</li>
+						<li>Solution type window will display</li>
+						<li>Select one and press Ok</li>
+					</ol>
+
+					<div class="img-container">
+					<img class="img" src="../img/#" alt="HFSS terms" style="width:60px; height: 50px;">
+					<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Summed input</p><br>
+					</div>
+				 </li>
+
+				 <li>
+				 <ol>
+				 	<li>Draw a Box for substrate in modeller window</li>
+					<li>Assign material and proper dimensions in object property dialog box</li>
+				 </ol><br>
+
+				<div class="img-container">
+					<img class="img" src="../img/#" alt="HFSS terms" style="width:60px; height: 50px;">
+					<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Summed input</p><br>
+				</div>
+				
+				 <p>Each object has two properties :
+				 <ol>
+				 	<li>Attributes</li>
+				 	<li>Commands</li>
+				 </ol>
+				</p>
+				
+				 <p>By clicking the object in modal tree, attribute dialog box will appear in property window</p>
+
+				<div class="img-container">
+					<img class="img" src="../img/#" alt="HFSS terms" style="width:60px; height: 50px;">
+					<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Summed input</p><br>
+				</div>
+
+				 <p>Object attribute has following properties
+				 	<ul>
+				 		<li>Name - user defined name. Default names start with the primitive type followed by an increasing number: Box1, Box2, etc.</li>
+				 		<li>Material - user defined material property. The default property is vaccum. This can be changed by using the material toolbar.</li>
+				 		<li>Solve inside - By default HFSS only solves for fields inside dielectrics. To force the HFSS to solve inside conductors, check solve inside.</li>
+				 		<li>Model Object - Controls if the object is included in the solve.</li>
+				 		<li>Display Wireframe - Forces the object to always be displayed as wireframe.</li>
+				 		<li>Colour - Set object colour.</li>
+				 		<li>Transparency - Set the transparency of an object. 0-Solid, 1- Wireframe.</li>
+				 	</ul>
+				 </p>
+				 <p>Designing parameters of object can be filled by using command window. It is opened by expanding object in modal tree and clicking create.<br>
+
+					<div class="img-container">
+					<img class="img" src="../img/#" alt="HFSS terms" style="width:60px; height: 50px;">
+					<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Summed input</p><br>
+					</div>
+
+				 We can use variables instead of fixed dimensions.</p>
+				</li>
+
+				<li>Draw a rectangle below the substrate and name it as ground.
+					<div class="img-container">
+					<img class="img" src="../img/#" alt="HFSS terms" style="width:60px; height: 50px;">
+					<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Summed input</p><br>
+					</div>
+				</li>
+				
+				<li>Draw another rectangle above the substrate and name it as patch.
+					<div class="img-container">
+					<img class="img" src="../img/#" alt="HFSS terms" style="width:60px; height: 50px;">
+					<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Summed input</p><br>
+					</div>
+				</li>
+
+				<li>Draw another rectangle for micro strip transmisssion line and unite it with patch by using boolean algebra.
+					<div class="img-container">
+					<img class="img" src="../img/#" alt="HFSS terms" style="width:60px; height: 50px;">
+					<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Summed input</p><br>
+					</div>
+				</li>
+				
+				<li>Draw another rectangle in YZ plane and name it as source.
+					<div class="img-container">
+					<img class="img" src="../img/#" alt="HFSS terms" style="width:60px; height: 50px;">
+					<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Summed input</p><br>
+					</div>
+				</li>
+				
+				<li>Draw another Box and name it as Air for the radiation from the structure.
+					<div class="img-container">
+					<img class="img" src="../img/#" alt="HFSS terms" style="width:60px; height: 50px;">
+					<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Summed input</p><br>
+					</div>
+				</li>
+
+				<li>Now further assign the boundary conditions to the different objects. Boundary conditions enable the control of the characteristics of the different objects. It is very important to have the information about the boundary conditions. <br><br>
+				As we know in antenna radiating element and ground should be perfect conductor. Therefore, assign them perfect electrical boundaries. <br><br>
+				Assign boundary to patch: <br><br>
+				Select <b>Patch --> Right click on Patch --> select Boundary --> Per_E </b>
+
+					<div class="img-container">
+					<img class="img" src="../img/#" alt="HFSS terms" style="width:60px; height: 50px;">
+					<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Summed input</p><br>
+					</div>
+				</li>
+
+				<li>Assign Boundary to Ground by selecting ground plane in same way above.
+					<div class="img-container">
+					<img class="img" src="../img/#" alt="HFSS terms" style="width:60px; height: 50px;">
+					<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Summed input</p><br>
+					</div>
+				</li>
+
+				<li>Assign radiation boundary to air box. Radiation boundaries act as absorbing boundaries and waves can radiate out of the structure and toward the radiation boundary. The system absorbs the wave at the radiation boundary, essentially ballooning the boundary infinitely far away from the structure into space. <br><br>
+				<b>Note: </b> The S-parameter stabilizes at lambda/4, from the radiating element. We recommended that you size the air volume lambda/4 at the lowest frequency. This example has a lower sweep point 2 GHz and a lambda/4 of 4 cm.<br><br>
+				Select <b>Faces of Air Box --> Right Click --> Boundary --> Radiation</b>
+
+					<div class="img-container">
+					<img class="img" src="../img/#" alt="HFSS terms" style="width:60px; height: 50px;">
+					<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Summed input</p><br>
+					</div>
+				</li>
+
+				<li>Assign excitation <br><br>
+					Select <b>Source --> Right click on Source --> Assign Excitation --> Lumped Port</b> <br><br>
+					A dialog box will appear and use ground as reference then click ok.
+					<div class="img-container">
+					<img class="img" src="../img/#" alt="HFSS terms" style="width:60px; height: 50px;">
+					<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Summed input</p><br>
+					</div>
+				</li>
+
+				<li><b>Analysis Setup:</b> <br><br>
+					Right click on analysis in <b>Project Manager --> add Solution Setup</b> <br><br>
+					A new window will appear that contains following parameters: <br><br>
+					<b>Solution Frequency</b> solution frequency is desired frequency at which we want results. If the solution frequency is not in the band then results will not be accurate.<br><br>
+					<b>Maximum no. of passes: </b>This number controls the maximum number of passes the adaptive mesh routine will perform as it attempts to satisfy the convergence criteria and to obtain desire results. <br><br>
+					<b>Maximum delta S: </b>This number defines the convergence criteria for the adaptive meshing process. The Delta S is defined as the maximum change in the magnitude of the S-parameters between two consecutive passes.
+
+					<div class="img-container">
+					<img class="img" src="../img/#" alt="HFSS terms" style="width:60px; height: 50px;"><br>
+					</div>
+
+					<b>Add frequency sweep: right click Solution Setup --> add Frequency Sweep</b><br><br>
+					A new window will appear that contains following parameters: <br><br>
+					<b>Sweep: </b> HFSS provides following methods to calculate response:
+					<ul style="font-weight: bold;">
+						<li>Discrete</li>
+						<li>Fast</li>
+						<li>Interpolating</li>
+					</ul><br>
+					Each method has own pros and conss.<br><br><br>
+
+					<b>Start frequency:</b> Here, we have to define staring frequency for which we want results. <br><br>
+					<b>Stop frerquency: </b>Here, we will define stop frequency as shown in figure.<br><br>
+					<b>Step size:</b> Step size defines the difference between succeccive steps in calculating response.
+
+					<div class="img-container">
+					<img class="img" src="../img/#" alt="HFSS terms" style="width:60px; height: 50px;"><br>
+					</div>
+				</li>
+
+				<li>Check validation of the model by clicking <b>validate</b> button in the toolbar.<br><br>
+					<div class="img-container">
+					<img class="img" src="../img/#" alt="HFSS terms" style="width:60px; height: 50px;"><br>
+					</div>
+					A new window will appear after clicking validate button and tell status of the model. If there is any cross check then it means there is any error which will be shown in message box and after debugging then validate again to recheck.
+
+					<div class="img-container">
+					<img class="img" src="../img/#" alt="HFSS terms" style="width:60px; height: 50px;"><br>
+					</div>
+				</li>
+
+				<li>Run simulation by clicking <b>Analyse all</b> button in the toolbar. <br><br>
+					<div class="img-container">
+					<img class="img" src="../img/#" alt="HFSS terms" style="width:60px; height: 50px;"><br>
+					</div>
+				Clicking analyse all, simulation will start and progressing will be shown in the progress window.
+					<div class="img-container">
+					<img class="img" src="../img/#" alt="HFSS terms" style="width:60px; height: 50px;"><br>
+					</div>
+				</li>
+
+				<li><b>Analyse Result</b>
+
+					Right click on <b>Results</b> in <b>Project Manager</b> and we can create various parameters such as
+					<ul>
+						<li>S parameter</li>
+						<li>Gain</li>
+						<li>Directivity</li>
+						<li>Radiation pattern</li>
+						<li>VSWR and so on</li>
+					</ul> <br>
+					There are also many other features which makes this software suitable choice for engineers and technicians to design new RF structures such as optimization and parametric sweep.
+				</li>
+
+			</ol>
+
+		</div>
+	</body>
+</html>

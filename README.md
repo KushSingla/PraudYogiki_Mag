@@ -1,0 +1,1 @@
+# PraudYogiki_Mag

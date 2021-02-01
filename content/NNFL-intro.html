@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html>
+	<head> 
+		<meta charset='utf-8'>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Notes NNFL</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+	<link rel="stylesheet" href="../css/main.css">
+	
+	</head>
+	<body class='site-header'>
+
+		<div>
+			<h1>Fundamentals of Neural Networks</h1>
+			
+			<div>
+				<a class="click-me" href="../index.html"​>Previous</a>
+				<a class="click-me" href="./ANN.html"​>Next</a>
+			</div>
+
+			<p>After noon, fellas !!</p>
+			<p>Today we are discussing about neural networks. I know name seems a bit difficult to analyse.</p>
+			<p>Let's dive right in::</p>
+			<p>Topics to study are: </p>
+
+			<ul>
+				<li>Introduction to artificial neural network</li>
+				<li>The biological neural network
+					<ul>
+						<li>Biological inspiration</li>
+						<li>Characteristics of human brain</li>
+						<li>Objective for artificial neural network</li>
+						<li>Introduction to a real neuron or biological neuron</li>
+						<li>Structure of a typical biological neuron
+							<ul>
+								<li>Dendrites</li>
+								<li>Cell body</li>
+								<li>Axon</li>
+								<li>Synapse</li>
+							</ul>
+						</li>
+						<li>The communication of bio neuron or neural communication</li>
+					</ul>
+				</li>
+				<li>Bio neuron network to artificial neuron network
+					<ul>
+						<li>Neuron v/s node</li>
+						<li>Synapse v/s weight</li>
+						<li>Idealized neurons</li>
+					</ul>
+				</li>
+				<li>The Artificial neural networks</li>
+				<li>The artificial neuron</li>
+				<li>Bias of a neuron</li>
+<!-- 				<li> Different types of neurons
+					<ul>
+						<li>Linear neurons</li>
+						<li>Binary threshold neurons</li>
+						<li>Rectified linear neurons</li>
+						<li>Sigmoid neurons</li>
+						<li>Stochastic binary neurons</li>
+					</ul>
+				</li> -->
+				<li>Activation functions & different types of activation fucntions
+<!-- 					<ul>
+						<li>Threshold activation function</li>
+						<li>binary threshold signal function</li>
+						<li>Linear threshold signal function</li>
+						<li>Linear  Activation function</li>
+						<li>Nonlinear Activation fucntion</li>
+						<li>Sigmoidal Signal function</li>
+						<li>Gaussian signal function</li>
+					</ul>	 -->	
+				</li>
+				<!-- <li>Threshold logic neuron(TLN) in discrete time </li>
+				<li>Stochastic neurons</li> -->
+			</ul>
+
+			<h2>Introduction to Artificial Neural Netowrk</h2>
+			
+			<p>Basic definition of artificial neural network, neural network, or just neural net is, a computational learning system that uses a network of functions to understand and translate a data input of one form into a desired output, usually in another form. The concept of the artificial neural network was inspired by human biology and the way neurons of the human brain function together to understand inputs from human senses.</p>
+			
+			<h2>The biological neural network</h2>
+
+			<p>Afternoon fellas !!!</p>
+			<p>Today, we are going to attempt to understand natural biological neural systems through computational modeling.</p>
+
+			<h3>Biological inspiration</h3>
+
+			<ul>
+				<li>The brain has been extensively studied by scientists. The functioning of an individual biological neuron is found extremely complex.</li>
+
+				<li>Engineers have tried to model the biological neural system or one can say, tried to model that how the neurons exchange information and process it.</li>
+
+				<li>Biological neurons are responsible for thought emotion, cognition etc. Human brain consists of a dense network of blood vessel.</li>
+
+				<li>As per the modification of the neural model is, engineers have modified the neural models to make them more useful but :
+					<ul>
+						<li>less like biological neural system.</li>
+						<li>have kept much of the terminology</li>
+					</ul>
+				</li>
+			</ul>
+
+
+			<h3>Characteristics of human brain</h3>
+
+			<ul>
+				<li>Ability to learn from experience</li>
+				<li>Ability to generalize the knowledge it possess</li>
+				<li>Ability to perform abstraction</li>
+				<li>To make errors</li>
+			</ul>
+
+			<h3>Objective of artificial neural network</h3>
+			<p>To emulate or simulate the human brain.</p>
+
+			<h3>Introduction to a real neuron or a biological neurons</h3>
+			<div class="img-container">
+				<img class="img" src="../img/biologicalNeuralNet.jpeg" alt="Biological Neural Netowrk" style="height:400px; width: 500px;">
+			</div>
+			<ul>
+				<li>Neuron is a fundamental buildng block of the nervous system.</li>
+				<li>The brain is a collection of about 10 billion interconnected neurons.</li>
+				<li>Each neuron is a cell that uses biochemical reactions to recieve, process and transmit information.</li>
+				<li>A neuron plays an important role in computational and communication functions within the brain.</li>
+				<li>In general a biological neuron contains many inputs(also known as dendrites) but one output unit(also known as nerve endings)</li>
+			</ul>
+
+			<h3>Structure of a typical biological neuron</h3>
+
+			<div class="img-container">
+				<img class="img" src="../img/neuron.webp" alt="Biological Neuron Structure" style="width:600px; height: 300px;">
+			</div>
+
+			<p>The biological neuron has four main regions in its structure: </p>
+			<ol>
+				<li>The dendrites</li>
+				<li>The cell body</li>
+				<li>The axon</li>
+				<li>The synapse</li>
+			</ol>
+
+			<h4>Dendrites</h4>
+			<ul>
+				<li>Dendrites are fibrous roots that branch out from the cell body.</li>
+				<li>Like antennae, dendrites receive and process signals from the axons of other neurons.</li>
+				<li>Neurons can have more than one set of dendrites, known as dendritic trees. How many they have generally depends on their role.</li>
+				<li>A neuron's dendritic tree is connected to a thousand neighbouring neurons.</li>
+			</ul>
+
+			<h4>Cell body</h4>
+			<ul>
+				<li>It is an important part of the cell. The cell body contains the nucleus and is the site of synthesis of virtually all neural proteins and membranes.</li>
+				<li>The cell body integrates synaptic input and determines the message to be transmitted to other cells by the axon.</li>
+				<li>It is also responsible for a variety of complex biochemical processes.</li>
+				<li>The cell body contains a number of smaller, specialized substructures, called as organelles, or little organs, which carry out many of the cells functions.</li>
+			</ul>
+
+			<h4>Axon</h4>
+			<ul>
+				<li>An axon is a long, tail-like structure which joins the cell body to a specialized junction called the azon hillock. </li>
+				<li>An axon's main purpose is to conduct electrical signals generated at the axon down its length. These signals are called action potentials. </li>
+				<li>Many axons are insulated with fatty substance called myelin. Myelin helps axons to conduct an electrical signals. Neurons generally have one main axon.</li>
+				<li>The brain analyzes all patterns of signals sent, and from that information it interprets the type of information received.</li>
+			</ul>
+
+			<h4>Synapse</h4>
+			<ul>
+				<li>The synapse is the area of contact between two neurons.</li>
+				<li>The two neurons do not physically touch because they are separated by a cleft</li>
+				<li>The electric signals are sent through chemical interaction.</li>
+				<li>The neuron sending the signal is called pre-synaptic cell and the neuron receiving the electrical signal is called post-synaptic cell.</li>
+			</ul>
+
+			<h3>The communication of bio neuron or neural communication</h3>
+			<ul>
+				<li>Electrical potential across cell membrane exhibits spikes called action potentials.</li>
+				<li>The spike originates in cell body, travel down axon, and causes synaptic terminals to release neurotransmitters.</li>
+				<li>The chemical diffuses across synapse to dendrites of other neurons.</li>
+				<li>If net input of neurotransmitters to a neuron from other neurons is excitatory and exceeds some threshold, it fires an action potential.</li>  
+			</ul>
+
+			<h2>Bio neuron network to artificial neuron network</h2>
+			<p>Hey peeps, I know its going on very slow but what can I do ? (-_-)...!!!</p>
+			<p>The ppts are so difficult and incomplete. There are many spelling mistakes that is making notes gathering very difficult.</p>
+			<p>Anyways, god save us !!!!! From here on, we are proceeding further towards how one can relate the artificial neural network with the biological neural net?</p>
+
+			<h3>Neuron v/s Node</h3>
+
+			<div class="img-container">
+				<img class="img" src="../img/neuronVsNode.png" alt="Biological Neural v/s Node" style="width:500px; height: 400px;">
+			</div>
+
+			<h3>Synapse v/s weight</h3>
+			<ul>
+				<li>Axon turns the processed inputs to outputs.</li>
+				<li>Synapses are the electrochemical contact between neurons.</li>
+			</ul>
+
+			<div class="img-container">
+				<img class="img" src="../img/synapseVsWeight.png" alt="Biological Neural v/s Node" style="width:400px; height: 300px;">
+			</div>
+
+			<div class="img-container">
+				<img class="img" src="../img/synapseVsWeight2.png" alt="Biological Neural v/s Node" style="width:500px; height: 350px;">
+			</div>
+
+			<ul>
+				<li>Each neuron receives inputs from other neurons.
+					<ul>
+						<li>A few neurons also connect to receptors.</li>
+						<li>Cortical neurons use spikes to communicate.</li>
+					</ul>
+				</li>
+				<li>The effect of each input line on the neuron is controlled by a synaptic weight.
+					<ul>
+						<li>The weights can be postive or negative.</li>
+					</ul>
+				</li>
+				<li>The synaptic weights adapt continously so that the whole network learns to perform useful computations.
+					<ul>
+						<li>Computations include recognizing objects, understanding language, making plans, controlling the body and many more.</li>
+					</ul>
+				</li>
+				<li>Supppose we have 10<sup>11</sup> neurons each with about 10<sup>4</sup> weights.
+					<ul>
+						<li>In a neural system a huge number of weights can affect the computation in a very short time.</li>
+					</ul>
+			</li>
+			</ul>
+
+			<h3>Idealized neurons</h3>
+			<p>It is clear that aritficial neurons are just trying to emulate or simulate the basic principle of the biological neural system.</p>
+			<p>In general, before making model of anything one need to idealize the things:</p>
+			
+			<ul>
+				<li>Idealization removes complicated details that are not essential for understanding the main principles.</li>
+				<li>It allows us to apply mathematics and to make analogies to other, familiar systems.</li>
+				<li>Once the basic principle is understood, its easy to add complexity to make the model more faithful.</li>
+			</ul>
+
+			<h2>The artificial neural networks</h2>
+			<p>Good afternoon, Fellas !!! Hope you had a nice day before. </p>
+			<p>Today, we are going to study about again neural networks. I know kind off sounds boring but have some patience, interesting things are on their way to here. From this point on we will not be talking about biological neuron anymore. Focus will be on the artificial neural networks.</p>
+			<p>So, let's begin.</p>
+
+			<ul>
+				<li>An artifical neural network is composed of many artificial neurons that are linked together according to a specific network architecture.</li>
+				
+				<li>Signals (action potential) appear at the node's inputs (synapse).</li>
+
+				<li>Each input at the node is multipled by a certain weight, before being added at the node (neuron) to produce an overall activation.</li>
+
+				<li>If the input exceeds a threshold, the node fires, sending signals to other nodes.</li>
+
+			</ul>
+
+			<h2>The artificial neuron</h2>
+
+			<div class="img-container">
+				<img class="img" src="../img/artificialNeuron.jpeg" alt="Artificial Neuron" style="width:750px; height: 350px;">
+			</div>
+			
+			<ul>
+				<li>The neuron is the basic information processing unit of a neural netowrk.</li>
+				<li>It consists of:
+					<ol>
+						<li>A set of synapses or connecting links, each link characterized by a weight: (W k<sub>j</sub>)<br>
+							<p>W<sub>1</sub>,W<sub>2</sub>,..., W<sub>m</sub></p>
+						</li>
+						<li>An adder function (linear combiner) which computes the weight sum of inputs: <br>
+							<p> u = </p>  <!-- Need to add a mathematical formula here, using the code the add formula not the pic.-->
+						</li>
+						<li>Activation functions are mathematical equations that determine the output of a neuron. The function is attached to each neuron in the network, and determines whether it should be activated ("fired") or not, based on whether each neuron's input is relevant for the model's prediction. </li>
+					</ol>
+				</li>
+			</ul>
+
+			<h2>Bias of a neuron</h2>
+			<ul>
+				<li>Bias is an additional parameter in a neuron which is used to adjust the output along with the weighted sum of the inputs to the neuron.</li>
+				<li>It can be thought of as analogous to the role of a constant in a linear function, whereby the line is effectively transposed by the constant value.</li>
+				<li>Bias is a constant which helps the model in a way that it can fit best for the given data. In simpler terms, one can say that bias helps in controlling the value at which activation function will trigger.</li>
+			</ul>
+<!-- 
+			<h2>Different types of neurons</h2>
+			<h3>Linear neuron</h3>
+			<ul>
+				<li></li>
+			</ul> -->
+
+			<h2>Activation function & different types of activation functions</h2>
+			
+			<p>Activation function as mentioned earlier is used to calculate the output response of a neuron.</p>
+
+			<div class="img-container">
+				<img class="img" src="../img/activationFunctionTable.png" alt="Activation Function table" style="width:900px; height: 600px;">
+			</div>
+			
+		</div>
+	</body>
+</html>

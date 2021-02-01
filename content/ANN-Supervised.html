@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<!-- 
+	# Should also look forward to make a personal dictionary also which can store words that I intend to save.
+	And the words should be saved inside a local file so that I can see how much database has been build and all. (like need to brain strom over it.)
+ -->
+<html>
+	<head> 
+		<meta charset='utf-8'>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Notes NNFL</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" href="../css/main.css">
+	
+	</head>
+	<body class='site-header'>
+
+		<div>
+			<h1>Supervised learning in Artificial Neural Networks</h1>
+
+			<div>
+				<a class="click-me" href="ANN.html"​>Previous</a>
+				<a class="click-me" href="#"​>Next</a>
+			</div>
+
+			<p>Topics to study are: </p>
+
+			<ul>
+				<li>Single layer Neural Network</li>
+				<li>Linear separability
+					<ul>
+						<li>One Dimension</li>
+						<li>Two Dimension</li>
+						<li>Three Dimension</li>
+						<li>Extending to n dimensions</li>
+					</ul>
+				</li>
+				<li>Handling linearly non-separable sets
+					<ul>
+						<li>Define a nonlinear function</li>
+						<li>Effect of changing weights and bias</li>
+					</ul>
+				</li>
+				<li>Training algorithm
+					<ul>
+						
+						<li>Adaptive Linear Neuron (Adaline)
+							<ul>
+								<li>Architecture</li>
+								<li>Training Algorithm</li>
+							</ul>
+						</li>
+
+						<li>Multiple Adaptive Linear Neuron (Madaline)
+							<ul>
+								<li>Architecture</li>
+								<li>Training Algorithm</li>
+							</ul>
+						</li>
+					
+					</ul>
+				</li>
+				<li>Error Correction & gradient descent rules</li>
+				<li>Multi-layer network architecture</li>
+				<li>Back Propagation Algorithm (BPA)
+					<ul>
+						<li>Various parameters</li>
+						<li>Selection of various parameters</li>
+					</ul>
+				</li>
+				<li>Feed forward Network</li>
+				<li>Radial-Basis Function (RBF) network</li>
+				<li>Learning strategies of RBF</li>
+			</ul>
+
+			<h2>Single layer Neural Network </h2>
+				<p>Afternoon fellas ...!!! Today we are going to start with some subtopics of single layer networks.</p>
+				<p>So, we are starting with the most basic networks in neural networks i.e. single layer networks.</p>
+			<ul> 
+				<li>A single-layer neural network represents the most simple form of NN, in which there is only one layer of input nodes that send weighted inputs to a subsequent layer of receiving nodes, or in some cases, on receiving node.</li>
+				<li>This single-layer design was part of the foundation for systems which have now vbecome much more complex.</li>
+				<li>One of the early examples of single-layer NN was called a "perceptron". The perceptron would return a function based on inputs, again, based on single neurons in the physiology of the human brain.</li>
+				<li>The <a style='font-weight: bold;'>perceptron</a>:  Input is multi-dimensional (i.e. input can be a vector)</li>
+				<li>input x = (I<sub>1</sub>),I<sub>2</sub>), .., I<sub>n</sub>)</li>
+				<li><a style='font-weight: bold;'>Input nodes (or units)</a> are connected (typically fully) to a node (or multiple nodes) in the next layer.</li>
+
+					<div class="img-container">
+						<img class="img" src="../img/sumPerceptron.gif" alt="Perceptron summation formula" style="width:60px; height: 50px;">
+						<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Summed input</p><br>
+					</div>
+				
+					<div class="img-container">
+						<img class="img" src="../img/diagramPerceptron.jpeg" alt="Perceptron diagram" style="width:350px; height: 250px;">
+					</div>
+			</ul>
+
+			<h2>Linear separability</h2>
+
+			<p>Ik its a lazy dayy. I'm also feeling very off to work but we have to work right !!! <br> Let's just dive right in and complete this mf !!</p>
+			<ul>
+				<li>Linear separability is an important concept in NN. This idea is to check if separate points in an n-dimensional space using only n-1 dimensions. </li>
+				<p><a style='font-weight: bold;'>Lost it ?</a> Here's a simpler explanation: </p>
+			</ul>
+
+			<h3>One Dimension</h3>
+			<ul>
+				<li>Let's say you're on a number line. You take any two numbers. Now, there are two possibilities: </li>
+				<ol>
+					<li>You choose two different numbers</li>
+					<li>You choose the same number</li>
+				</ol>
+				<li>If you choose two different numbers, you can always find another number between them. This number "separates" the two numbers you chose. </li>
+
+					<br><div class="img-container">
+						<img class="img" src="../img/linearSeparabilityOneDimension.jpeg" alt="One dimension separability" style="width:424px; height: 75px;">
+						<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>One dimensional separability</p><br>
+					</div>
+
+					<li>So, you say that these two numbers are "linearly separable"</li>
+					<li>But, if both numbers are the same, you simply cannot separate them. They're the same. So, they're "lineraly inseparable". (Not just linearly, they're aren't separable at all. You cannot separate something from itself) </li>
+			</ul>
+
+			<h3>Two Dimensions</h3>
+			<ul>
+				<li>On extending this idea to two dimensions, some more possiblities come into existence. Consider the following: </li>
+
+					<br><div class="img-container">
+						<img class="img" src="../img/linearSeparabilityTwoDimensions.jpeg" alt="Two dimensions separability" style="width:480px; height: 320px;">
+						<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Two classes of points</p><br>
+					</div>
+				<li>Here, we're like to separate the point (1,1) from the other points. You can see that there exists a line that does this. In fact, there exist infinite such lines. So, these two "classes" of points are linearly separable. The first class consists of the point (1,1) and the other class has (0,1), (1,0) and (0,0). </li>
+				<li>Now consider this:</li>
+
+					<br><div class="img-container">
+						<img class="img" src="../img/linearSeparabilityTwoDimensions2.jpeg" alt="Two dimensions separability" style="width:480px; height: 320px;">
+						<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Linear inseparable</p><br>
+					</div>
+				<li>In this case, you just cannot use one single line to separate the two classes (one containing the black points and one containing the red points). So, they are linearly inseparable. </li>
+			</ul>
+
+			<h3>Three dimensions</h3>
+			<ul>			
+				<li>Extending the above two dimensions example to three dimensions. You need a plane for separating the two classes.</li>
+					<br><div class="img-container">
+						<img class="img" src="../img/linearSeparabilityThreeDimensions.jpeg" alt="Three dimensions separability" style="width:281px; height: 261px;">
+						<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Linear separability in 3D space</p><br>
+					</div>
+				<li>The dashed plane separates the red point from the other blue points. So its linearly separable. If bottom right point on the opposite sides was red too, it would become linearly inseparable.</li>
+			</ul>
+
+			<h3>Extending to n dimensions</h3>
+			<p>Things go up to a lot of dimensions in NN. So to separate classes in n-dimensions, you need an n-1 dimensional "hyperplane".</p>
+
+			<h2>Handling linearly non-separable sets</h2>
+			<p>After noon peeps !!! Hope you are all well. Today we are going to start from where we left.</p>
+			<ul>
+				<li>Non-separable input vectors are the ones that are responsible for linear non-separability and cannot be learned without forcing errors on the rest of inputs. That is, if non-separable vector is correctly 'learned' (i.e. it is assigned to the designated side of a hyperplane) then there must exist at least another input vector which is on the wrong side (i.e. opposite to its designated side) of the hyperplane. </li>
+				<li>One can say learning a non-separable vector makes an error to be committed in the learning process.</li>
+				<li> In general linearly separable data is data that can be classified into different classes by simply drawing line (or a hyperplane) through the data. But in practical examples linearly separable data is rarely available. </li>
+				<li> So, to handle linearly non-separable data kernel trick can be applied, where data is transformed using some nonlinear function so the resulting transformed points become linearly separable. A <a style='font-weight: bold;'>simple example</a> is shown below where the objective is to classifly red and blue points into different classes. Its not possible to use linear separator, however by transforming the variables, this becomes possible. </li>
+
+				<br><div class="img-container">
+						<img class="img" src="../img/linearlyNonseparableSets.png" alt="Example for linearly non-separable sets" style="width:573px; height: 267px;">
+				</div><br>
+
+
+				<li> Here, We will show a simple example to illustrate how NN learning is a special case of kernel trick which allows them to learn nonlinear functions and classify linearly non-separable data. We will use the same above example mentioned </li>
+
+		
+					<br><div class="img-container">
+						<img class="img" src="../img/nonseparabilityTrick.png" alt="Two dimensions separability" style="width:247px; height: 244px;">
+						<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Example of linearly inseparable data</p>
+					</div>
+				<li> NN can be represented as y = W<sub>2</sub>phi(W<sub>1</sub>x + B<sub>1</sub>) + B<sub>2</sub>. The classification problem can be seen as a 2 part problem, one of learning W<sub>1</sub> and other of learning W<sub>2</sub>. Changes in W<sub>1</sub> results in different functional transformation of data via phi(W<sub>1</sub>x + B<sub>1</sub>), and as the underlying function phi is nonlinear, phi(W<sub>1</sub>x + B<sub>1</sub>) is a nonlinear transformation of data X. These nonlinear functions are then combined using linear neurons via W<sub>2</sub> and B<sub>2</sub>. </li>
+
+				<h3>Define a nonlinear function</h3>
+
+				<li>Although any nonlinear functio can work,a good candidate is Relu. Relu can be described as a function that is 0 for X < 0 and identity for X > 0.</li>
+
+					<br><div class="img-container">
+						<img class="img" src="../img/reluActivationFunction.png" alt="Relu activation function" style="width:487px; height: 387px;">
+						<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Relu Activation function</p>
+					</div>
+
+				<h3>Effect of changing weights and bias</h3>
+
+				<li> We typically would compute weights for neurons using a backpropagation scheme, but as the objective is only to illustrate how nonlinear function are used to classify linearly non-separable data, I will set these weights by hand.</li>
+				<li>Consider the case where there are 2 features X<sub>1</sub> XB<sub>2</sub>, and the activation input to rely is given by W<sub>1</sub>X<sub>1</sub> + X<sub>2</sub>.</li>
+				<li>In this case, weight on second neuron was set to 1 nd bias to zero for illustration. Figure below shows the effect of changing the weight results in changing the region where the values are retained, and the white is where values of points are zero.</li>
+
+					<br><div class="img-container">
+						<img class="img" src="../img/nonseparableExample1.png" alt="Linearly non-separable sets example" style="width:573px; height: 581px;">
+						<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Red region is W<sub>1</sub>x1 + X<sub>2</sub> > 0 for different W<sub>1</sub>s.</p>
+					</div>
+
+				<li>Now we add bias to the special case where output of the neuron is X<sub>1</sub> + X<sub>2</sub> + B. The effect of changing B is changing the intercept or the location of dividing line.</li>
+
+					<br><div class="img-container">
+						<img class="img" src="../img/nonseparableExample2.png" alt="Linearly non-separable sets example" style="width:573px; height: 581px;">
+						<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Effect of changing B in X<sub>1</sub> + X<sub>2</sub> + B.</p>
+					</div>
+
+				<li>Figures above show that by changing B, the intercept of the line can be changed. Therefore, by changing B and W and having multiple regions, different regions in the space can be carved out to separate red and the blue points above.</li>
+				<li> This is the primary mechanism of how NN are able to learn complex nonlinear functions and perform complex nonlinear transformations. Infact, if the activation function is set as a simple linear function, NNs lose  their nonlinear function approximation capabilities. </li>
+				<li> By changing weights and biasses, a region can be carved out such that for all blue points  w<sub>2</sub>relu(W<sub>1</sub>X + B<sub>1</sub>) + 0.1 > 0. This is shown in figure below: </li>
+
+					<br><div class="img-container">
+						<img class="img" src="../img/nonseparableExample3.png" alt="Linearly non-separable sets example" style="width:573px; height: 581px;">
+						<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Combining different nonlinear function (relu) regions allows for classification of linearly inseparable data. </p>
+					</div>
+			</ul>
+
+			<h2>Training Algorithm</h2>
+			<p>Hey peeps, we are back. So you know I am really confused which training algorithm should I explain or which not. <br> You know what I think ! I think I should explain the ones which are not mentioned in the topics which we have to cover. <br> Let the party begin: </p>
+
+			<ul>
+				<li> As we all know, supervised learning takes place under the supervision of a teacher. This learning process is dependent. During the training of ANN under supervised learning, the input vector is presented to the network, which will produce an output vector. This output vector is compared with the desired/target output vector. An error signal is generated if there is a difference between the actual output and the desired/target output vector. On the basis of this error signal, the weights would be adjusted until the actual output is matched with the desired output. </li>
+				
+				<li> Although there are many supervised algorithms available but we are going to study only few which are the most basic ones. Algorithms are: <br>Perceptron (Perceptrons can be trained for both single and multiple networks) <br> Adaptive Linear Neuron (Adaline)<br> Multiple Adaptive Linear Neuron (Madaline)<br> Back Propagation Neural Networks (BPN Networks) </li>
+
+				<li>Before going further, I want to make something clear that perceptron as we know is already been discussed earlier and back propagation is in the topics so, We are only discussing about Adaline and Madaline.</li>
+
+				<h3>Adaptive Linear Neuron (Adaline)</h3>
+				<p> Adaline as it must clear by know stands for Adaptive Linear Neuron, is a network having a single linear unit. It was developed by Widrow and Hoff in 1960. Some important point about Adaline are : </p>
+				<ul>
+					<li>It uses bipolar activation function.</li>
+					<li>It uses delta rule for training to minimize the Mean-Square Error MSE between the actual output and the desired/target output.</li>
+					<li>The weights and the bias are adjustable.</li>
+				</ul>
+
+				<h4> Architecture </h4>
+				<p>The basic structure of Adaline is similar to perceptron having an extra feedback loop with the help of which the actual output is compared with the desired/target output. After comparison on the basis of training algorithm, the weights and the bias will be updated.</p>
+
+				<br><div class="img-container">
+					<img class="img" src="../img/architecture_adaptive_linear.png" alt="Architecture of Adaptive Linear" style="width:579px; height: 301px;">
+				</div><br>
+
+				<h4>Training Algorithm</h4>
+				<ol>
+					<li>Initialize the following to start the training -
+						<ul>
+							<li>Weights</li>
+							<li>Bias</li>
+							<li>learning rate α</li>
+						</ul>
+					</li>
+						<p>For easy calculation and simplicity, weights and bias must be set equal to 0 and the learning rate must be set equal to 1.</p>
+
+						<li> Continue step 3-8 when the stopping condition is not true.</li>
+						
+						<li> Continue step 4-6 for every bipolar training pair s:t. </li>
+						
+						<li>Activate each input unit as follows:- <br>
+							
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+							
+							x<sub>i</sub> = s<sub>i</sub> (i = 1 to n)
+						</li>
+						
+						<li>Obtain the net input with the following relation:- <br>
+							
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+							 y<sub>in</sub> = b + (i to n)⅀ x<sub>i</sub>w<sub>i</sub> <br>
+							<p>Here <b>'i'</b> is bias and <b>'n'</b> is the total number of input neurons</p>
+						</li>
+
+						<li>Apply the following activation function to obtain the final output:- <br>
+
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+							
+							f(y<sub>in</sub>) = { 1 if y<sub>in</sub> ≥ 0  & -1 if y<sub>in</sub> < 0 }
+						</li>
+
+						<ul>
+							<li>if y ≠ t then, <br><br>
+							
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									
+								w<sub>i</sub>(new) = w<sub>i</sub>(old) + α(t - y<sub>in</sub>)x<sub>i</sub>
+
+								<br><br>
+								
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									
+								b(new) = b(old) + α(t - y<sub>in</sub>)
+
+
+							<li> if y = t then, <br><br>
+								
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									
+								w<sub>i</sub>(new) = w<sub>i</sub>(old)
+
+								<br><br>
+								
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									
+								b(new) = b(old)
+
+							</li>
+						</ul>	
+							<p> Here <b>'y'</b> is the actual output and <b>'t'</b> is the desired/target output and (t - y<sub>in</sub>) is the computed error</p>
+
+						<li>Test for the stopping condition, which will happen when there is no change in weight or the heighest weight change occurred during training si smaller than the specified tolerance. </li>
+				</ol>
+
+				<h3> Multiple Adaptive Linear Neuron (Madaline) </h3>
+				<p> As it should be clear that Madaline stands for Multiple Adaptive Linear Neuron, is a network which consists of many Adaline in parallel. It will have a single output unit. Some points about Madaline: </p>
+				<ul>
+					<li>It is just like a multilayer perceptron, where Adaline will act as a hidden unit between the input and the Madaline layer.</li>
+					<li>The weights and the bias between the input and Adaline layers, as in we see in the Adaline architecture, are adjustable.</li>
+					<li>The Adaline and Madaline layers have fixed weights and bias of 1.</li>
+					<li>Training can be done with the help of Delta rule.</li>
+				</ul>
+
+				<h4>Architecture</h4>
+				<p>The architecture of Madaline consists of <b>"n"</b> neurons of the input layer, <b>"m"</b> neurons of the Adaline layer, and 1 neuron of the Madaline layer. The Adaline layer can be considered as the hidden layer as it is between the input layer and the output layer, i.e. the Madaline layer.</p>
+
+				<br><div class="img-container">
+					<img class="img" src="../img/madalineArchitecture.png" alt="Architecture of Multiple Adaptive Linear" style="width:542px; height: 283px;">
+				</div><br>
+
+				<h4>Training Algorithm</h4>
+				<p>By now know that only the weights and bias between the input and the Adaline layer are to be adjusted, and the weights and bias between the Adaline and the Madaline layer are fixed.</p>
+
+				<ol>
+					<li> Initialize the following to start the training:-
+
+						<ul>
+							<li>Weights</li>
+							<li>Bias</li>
+							<li>learning rate α</li>
+						</ul>	
+							<p>For easy calculation and simplicity, weights and bisad must be set equal to 0 and the learning rate must be set equal to 1.</p>
+					</li>
+
+						<li>Continue step 3-8 when the stopping condition is not true.</li>
+						<li>Continue step 4-6 for every bipolar training pair <b>s:t</b></li>
+
+						<li>Activate each input unit as follows:- <br>
+							
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+							
+							x<sub>i</sub> = s<sub>i</sub> (i = 1 to n)
+						</li>
+
+						<li> Obtain the net input at each hidden layer, i.e. the Adaline layer with the following relation:- <br> 
+
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+							
+
+							Q<sub>inj</sub> = b<sub>j</sub> + (i to n)⅀ x<sub>i</sub>w<sub>ij</sub>j = 1 to m <br>
+
+							<p>Here <b>'b'</b> is bias and <b>'n'</b> is the total number of input neurons</p>
+						</li>
+
+						<li>Apply the following activation function to obtain the final output at the Adaline and the madaline layer:- <br>
+
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+							
+							f(x) = { 1 if x ≥ 0  & -1 if < 0 }
+
+							<p>Output at the hidden Adaline unit</p>
+
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+							Q<sub>j</sub> = f(Q<sub>inj</sub>)
+
+							<p>Final output of the network</p>
+
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+							y = f(y<sub>in</sub>)
+
+							<br>
+
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+							i.e.  y<sub>inj</sub> = b<sub>o</sub> + (j=1 to m)⅀ Q<sub>j</sub>v<sub>j</sub> 
+
+
+
+						</li>
+
+						<li>Calculate the error and adjust the weights as follows:- <br>
+
+							<ul>
+								
+								<li>if y ≠ t and t = 1 then,<br><br> 
+
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									
+								w<sub>ij</sub>(new) = w<sub>ij</sub>(old) + α(1 - Q<sub>inj</sub>)x<sub>i</sub>
+
+								<br><br>
+								
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									
+								b<sub>j</sub>(new) = b<sub>j</sub>(old) + α(t - Q<sub>inj</sub>)
+
+
+								</li>
+								<p> In this case, the weights would be updated on <b>Q<sub>j</sub></b>  where the net input in close to - because <b>t = 1.</b></p>
+
+								<li>if y ≠ t and t = -1 then,<br><br> 
+
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									
+								w<sub>ik</sub>(new) = w<sub>ik</sub>(old) + α(-1 - Q<sub>ink</sub>)x<sub>i</sub>
+
+								<br><br>
+								
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									
+								b<sub>k</sub>(new) = b<sub>k</sub>(old) + α(-1 - Q<sub>ink</sub>)
+
+								</li>
+								<p> In this case, the weights would be updated on <b>Q<sub>k</sub></b>  where the net input is positive because <b>t = 1.</b></p>
+								<p>Here <b>'y'</b> is the actual output and <b>'t'</b> is the desired/target output.</p>
+
+								<li>If <b>y = t</b> then <br><br>
+									
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+									There would be no change in weights.
+								</li>
+							</ul>
+						</li>
+
+						<li>Test for the stopping condition, which will happen when there is no change in weight or the highest weight change occured during is smaller than the specified tolerance.</li>
+
+				</ol>
+			</ul>
+
+			<h2>Error-Correction Learning</h2>
+			<p>Today we are going to start to learn more about supervised NN more precisely error correction learning in NN.</p>
+			<ul>
+				<li><b>Error-Correcting Learning</b>, used with supervised learning, is the technique of comparing the system output to the desired output value, and using that error to direct the training.</li>
+				<li>In the most direct route, the error valyes can be used to directly adjust the tap weights, using an algorithm such as the backpropagation algorithm. </li>
+				<li>If the system output is y, and the desired system output is known to be d, the error signal can be defined as: <br>
+
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+				<b>e = d - y</b>
+				</li>
+				<li>Error correction learning algrithms attempt to minimize this error signal at each training iteration. The most popular learning algorithm for use with error-correction learning is the backpropagation algorithm</li>
+			</ul>	
+
+			<h2>Gradient descent & rules</h2>
+			<p>In this we are going to study about gradient descent. Here we intend to discuss the gradient descent algorithm in order to fully understand the backpropagation algorithm. </p>
+			<ul>
+				<li>The <b>gradient descent algorithm</b> is used to minimize an error function g(y), through the manipulation of a weight vector w.</li>
+				<li>The algorithm is: <br><br>
+
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+				<b>w<sub>ij</sub>[n+1] = w<sub>ij</sub> + ηg(w<sub>ij</sub>[n])</b>
+				</li>
+				<li>Here, η is known as the step-size parameter, and affects the rate of convergence of the algorithm (or learning rate) </li>
+				
+				<li>If the step size is too small, the algorithm will take a long time to converge. If the step size is too large the algorithm might oscillate or diverge.</li>
+				
+				<li>The gradient descent algorithm works by taking the gradient of the weight space to find the path of steepest descent. By following the path of steepest descent at each iteration, one will either find a minimum, or the algorithm could diverge, if the weight space is infinitely decreasing. When a minimum is found, there is no guarantee that it is a global minimum, however.</li>
+				
+				<li>
+					<b>An analogy for understanding gradient descent</b><br><br>
+					The basic intuition behind gradient descent can be illustrated by a hypothetical scenario. A person is stuck in the mountains and is trying to get down (i.e. trying to find the global minimum). There is heavy fog such that visibility is extremely low. Therefore, the path down the mountain is not visible, so they must use local information to find the minimum. They can use the method of gradient descent, which involves looking at the steepness of the hill at their current position, then proceeding in the direction with the steepest descent (i.e. downhill). If they were trying to find the top of the mountain (i.e. the maximum), then they would proceed in the direction of steepest ascent (i.e. uphill). Using this method, they would eventually find their way down the mountain or possibly get stuck in some hole (i.e. local minimum or saddle point), like a mountain lake. However, assume also that the steepness of the hill is not immediately obvious with simple observation, but rather it requires a sophisticated instrument to measure, which the person happens to have at the moment. It takes quite some time to measure the steepness of the hill with the instrument, thus they should minimize their use of the instrument if they wanted to get down the mountain before sunset. The difficulty then is choosing the frequency at which they should measure the steepness of the hill so not to go off track.<br><br>
+					In this analogy, the person represents the algorithm, and the path taken down the mountain represents the sequence of parameter settings that the algorithm will explore. The steepness of the hill represents the slope of the error surface at that point. The instrument used to measure steepness is differentiation (the slope of the error surface can be calculated by taking the derivative of the squared error function at that point). The direction they choose to travel in aligns with the gradient of the error surface at that point. The amount of time they travel before taking another measurement is the step size.
+				</li>
+			</ul>
+
+			<h2>Multi-layer network architecture</h2>
+			<p>A multi-layer neural network contains more than one layer of artificial neurons or nodes. They differ widely in design. It is important to note that while single-layer neural networks were useful early in the evolution of AI, the vast majority of networks used today have a multi-layer model.<br>
+			After Rosenblatt perceptron was developed in the 1950s, there was a lack of interest in neural networks until 1986, when Dr. Hinton and his colleagues developed the backpropagation algorithm to train a multilayer neural network.<br>
+			Today it is a hot topic with many leading firms lik Google, Facebook, and Microsoft which invest heavily in applications using deep neural networks.
+			</p>
+
+			<ul>
+				<li>A fully connected multi-layer neural network is called Multilayer Perceptron (MLP).</li>
+			
+			<div class="img-container"><br>
+				<img class="img" src="../img/multi-layer-neural-network.png" alt="multi-layer-neural-network" style="width:615px; height: 323px;">
+				<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Examples of Multilayer Neural Network Architecture</p><br>
+			</div>
+			
+				<li>Above mentioned figure contains 3 layer and 5 layer neural networks, containing 1 and 2 hidden layers respectively.</li>
+				<li>The number of layers and the number fo neurons are referred to as hyperparameters of a neural networks, and these need tuning. Cross-validation techniques must be used to find ideal values for these.</li>
+				<li>The training occurs in a supervised style. The basic idea is to present the input vector to the network; calculate in thee forward direction the output of the each layer and the final output of the network. For the output layer the desired values are known and therefore the weights can be adjusted as for a single layer networks; in the case of the BP(Back Propagation) algorithm accordng to the gradient descent rule.</li>
+				<li>To calculate the weight changes in the hidden layer the error in the output layer is back-propagated to these layers according to the connecting weights. This process is repeated for each sample in the training set. One cycle through the training set is called an epoch. The number of epoches needed to train the network depends on various parameters, especially on the error calculated in the output layer.</li>
+			</ul>
+
+			<h2>Back Propagation Algorithm</h2>
+			<p>Back propagation is the backbone of multilayer perceptron. This algorithm is used by each and multilayer neural network to deal with error and weight calculations.</p>
+			<ul></ul>
+
+		</div>
+	</body>
+</html>
