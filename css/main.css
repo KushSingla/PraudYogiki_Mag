@@ -1,7 +1,7 @@
 /*Styling for pages except Home page*/
 .site-header { 
-	background-color: #333333; 
-	color: #ffeae8; 
+	background-color: #d1eefe; 
+	color: black; 
 	height: auto; 
 	display: flex; 
 	flex-direction: column; 
@@ -126,18 +126,18 @@ nav{
 }
 /*Styling for H1, H2, H3, H4 & p tags */
 h1 {
-	color: blue; 
+	color: #ff5733; 
 	font-family: verdana; 
 	text-align: center;
 }
 h2 {
-	color: #078080; 
+	color: #009184; 
 	font-family: verdana; 
 	text-align: center; 
 	font-size: 110%;
 }
 h3 {
-	color: #FFC300; 
+	color: #ff5733; 
 	font-family: verdana; 
 	text-align: center; 
 	font-size: 100%;
@@ -149,5 +149,5 @@ h4 {
 	font-size: 90%;
 }
 p {
-	color: #de04ab;
+	color: black;
 }
