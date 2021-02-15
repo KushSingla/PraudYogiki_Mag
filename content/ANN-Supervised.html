@@ -485,14 +485,45 @@
 			</div>
 			
 				<li>Above mentioned figure contains 3 layer and 5 layer neural networks, containing 1 and 2 hidden layers respectively.</li>
-				<li>The number of layers and the number fo neurons are referred to as hyperparameters of a neural networks, and these need tuning. Cross-validation techniques must be used to find ideal values for these.</li>
-				<li>The training occurs in a supervised style. The basic idea is to present the input vector to the network; calculate in thee forward direction the output of the each layer and the final output of the network. For the output layer the desired values are known and therefore the weights can be adjusted as for a single layer networks; in the case of the BP(Back Propagation) algorithm accordng to the gradient descent rule.</li>
+				<li>The number of layers and the number of neurons are referred to as hyperparameters of a neural networks, and these need tuning. Cross-validation techniques must be used to find ideal values for these.</li>
+				<li>The training occurs in a supervised style. The basic idea is to present the input vector to the network; calculate in the forward direction the output of the each layer and the final output of the network. For the output layer the desired values are known and therefore the weights can be adjusted as for a single layer networks; in the case of the BP(Back Propagation) algorithm accordng to the gradient descent rule.</li>
 				<li>To calculate the weight changes in the hidden layer the error in the output layer is back-propagated to these layers according to the connecting weights. This process is repeated for each sample in the training set. One cycle through the training set is called an epoch. The number of epoches needed to train the network depends on various parameters, especially on the error calculated in the output layer.</li>
 			</ul>
 
 			<h2>Back Propagation Algorithm</h2>
 			<p>Back propagation is the backbone of multilayer perceptron. This algorithm is used by each and multilayer neural network to deal with error and weight calculations.</p>
-			<ul></ul>
+			<ul>
+				<li>Learning in a multilayer network proceeds the same way as for a perceptron.</li>
+				<li>The simple working logic of back propagation learning is as  follows: 
+					<ol>
+						<li>A training set of input patterns is presented to the network.</li>
+						<li>The network computes its output pattern, and if there is an error - or in other words a difference between actual and desired output patterns - the weights are adjusted to reduce this error.</li>
+						<li> The main step for BP algo. is that, essentially, the error at the output layer is used to compute for the error at the hidden layer immediately proceding the output layer.</li>
+						<li>Once this is computed, this is used in turn to compute for the error of the next hidden layer immediately preceding the last hidden layer.</li>
+						<li>This is done sequentially until the error at the very first hidden layer is computed.</li>
+						<li>Since there is no information of the desired outputs of the hidden layers, therefore it can't be computed directly.</li>
+					</ol>
+					<li>We can say that BP has two phases of implementation:
+						<ol>
+							<li>Forward pass phase: Computed 'functional signal', feed forward propagation of input pattern signals through network. </li>
+							<li>Backward pass phase: computes 'error signal', propagates the error backwards through network starting at output units (where the error  is the difference between the actual and desired output values). </li>
+						</ol>
+					</li>
+				</li>
+				<div class="img-container"><br>
+					<img class="img" src="../img/backPropagation.PNG" alt="back-propagation" style="width:789px; height: 543px;">
+					<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Multi-layer back-propagation neural network</p><br>
+				</div>
+
+				<li>Key points related to BP:
+					<ul>
+						<li>The performance of theis learning depends on the initial setting of the weights, learning rate parameter, otuput functions of the units, etc. </li>
+						<li>It is important to initialize the weight values properly before applying the learning law for a given training set.</li>
+						<li>It is desirable to adjust the weights such that all the units learn at the same rate and for this the learning parameter should be different for different weights.</li>
+						<li>Normally, the backpropagation learning uses the weight change proportional to the negative gradient of the instantaneous error.</li>
+					</ul>
+				</li>
+			</ul>
 			
 			<div>
 				<a class="click-me" href="ANN.html"​>Previous</a>
