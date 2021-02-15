@@ -64,8 +64,9 @@
 				<li>Multi-layer network architecture</li>
 				<li>Back Propagation Algorithm (BPA)
 					<ul>
-						<li>Various parameters</li>
-						<li>Selection of various parameters</li>
+						<li>Strengths of BP learning</li>
+						<li>Deficiencies of BP learning</li>
+						<li>Limitations of Backpropagation learning</li>
 					</ul>
 				</li>
 				<li>Feed forward Network</li>
@@ -525,6 +526,66 @@
 				</li>
 			</ul>
 			
+			<h3>Strengths of BP learning</h3>
+			<ul>
+				<li><b>Great representation power</b>
+					<ul>
+						<li>Any L<sub>2</sub> function can be represented by a BP net.</li>
+						<li>Many such functions can be approximated by BP learning (gradient descent approach).</li>
+					</ul>
+					<li><b>Easy to apply</b>
+						<ul>
+							<li>Only requires that a good set of training samples is available.</li>
+							<li>Does not require substantial prior knowledge or deep understanding of the domain itself (ill structured problems).</li>
+							<li>Tolerates noise and missing data in training samples(graceful degrading).</li>
+						</ul>
+						<li><b>Easy to implement</b> the core of the learning algorithm. </li>
+						<li><b>Good generalization power</b>
+							<ul>
+								<li>Often produce accurate results for inputs outside the trainign set.</li>
+							</ul>
+						</li>
+					</li>
+				</li>
+			</ul>
+
+			<h3>Deficiencies of NP learning</h3>
+			<ul>
+				<li>Learning often takes a long time to converge.</li>
+				<li>Complex functions often need hundreds or thousands of epochs.</li>
+				<li>The network is essentially a black box.</li>
+				<li>It may provide a desired mapping between input and output vectors (x,o) but does not have the information of why a particular x is mapped to a particular o.</li>
+				<li>This is because the hidden nodes and the learned weights do not have clear semantics.</li>
+				<li>What can be learned are operational parameters, not general abstract knowledge of a domain.</li>
+				<li>Unlike many statistical methods, there is no theoretically well-founded way to assess the quality of BP learning.</li>
+				<li>There is no defined confidence level of o computed from input x using such net.</li>
+				<li>There is no defined confidence level for a trained BP net, with the final E (which may or may not be close to zero)</li>
+				<li>Problem with gradient descent approach:
+					<ul>
+						<li>Only guarantees to reduce the total error to a local minimum. (E might not be reduced to zero)</li>
+						<li>Cannot escape from the local minimum error state.</li>
+						<li>Not every function that is representable can be learned.</li>
+						<li>How bad: depends on the shape of the error surface. Too many valleys/wells will make it easy to be trapped in local minima.</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h3>Limitations of Backpropagation learning</h3>
+			<ul>
+				<li>Slow convergence</li>
+				<li>Problem of scaling i.e. when the complexity of the network is increased there is not guarantee that the given network would converge.</li>
+				<li>For many applications, the desired output may not be known precisely, in such a case Backpropagation learning cannot be used!</li>
+			</ul>
+
+			<h2>Feed forward network</h2>
+			<ul>
+				<li>A feedforward neural network is an artificial neural network wherein connections between the nodes do not form a cycle.</li>
+				<li>The feedforward neural network was the first and simplest type of artificial neural network devised.</li>
+				<li>In this network, the information moves in only one direction --forward--from the input nodes, through the hidden nodes (if any) and to the output nodes. There are no cycles or loops in the network.</li>
+				<li>The feed forward network on a broader view are divided into two types: <i>Single-layer perceptron</i> <i>Multi-layer perceptron</i></li>
+				<li>There are also some other feedforward networks i.e., any directed acyclic graph may be used for feedforward networkm with some nodes (with no parents) designated as inputs, and some nodes (with no children) designed as outputs. Examples of other feedforward network include <i style="font-weight: bold";>radial basis function networks</i>, which use a different activation function.</li>
+			</ul>
+
 			<div>
 				<a class="click-me" href="ANN.html"​>Previous</a>
 				<a class="click-me" href="#"​>Next</a>
