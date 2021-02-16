@@ -234,7 +234,7 @@
 
 				<br><div class="img-container">
 					<img class="img" src="../img/architecture_adaptive_linear.png" alt="Architecture of Adaptive Linear" style="width:579px; height: 301px;">
-				</div><br>
+				</div>
 
 				<h4>Training Algorithm</h4>
 				<ol>
@@ -320,7 +320,7 @@
 
 				<br><div class="img-container">
 					<img class="img" src="../img/madalineArchitecture.png" alt="Architecture of Multiple Adaptive Linear" style="width:542px; height: 283px;">
-				</div><br>
+				</div>
 
 				<h4>Training Algorithm</h4>
 				<p>By now know that only the weights and bias between the input and the Adaline layer are to be adjusted, and the weights and bias between the Adaline and the Madaline layer are fixed.</p>
@@ -482,7 +482,7 @@
 			
 			<div class="img-container"><br>
 				<img class="img" src="../img/multi-layer-neural-network.png" alt="multi-layer-neural-network" style="width:615px; height: 323px;">
-				<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Examples of Multilayer Neural Network Architecture</p><br>
+				<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Examples of Multilayer Neural Network Architecture</p>
 			</div>
 			
 				<li>Above mentioned figure contains 3 layer and 5 layer neural networks, containing 1 and 2 hidden layers respectively.</li>
@@ -513,7 +513,7 @@
 				</li>
 				<div class="img-container"><br>
 					<img class="img" src="../img/backPropagation.PNG" alt="back-propagation" style="width:789px; height: 543px;">
-					<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Multi-layer back-propagation neural network</p><br>
+					<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Multi-layer back-propagation neural network</p>
 				</div>
 
 				<li>Key points related to BP:
@@ -584,6 +584,54 @@
 				<li>In this network, the information moves in only one direction --forward--from the input nodes, through the hidden nodes (if any) and to the output nodes. There are no cycles or loops in the network.</li>
 				<li>The feed forward network on a broader view are divided into two types: <i>Single-layer perceptron</i> <i>Multi-layer perceptron</i></li>
 				<li>There are also some other feedforward networks i.e., any directed acyclic graph may be used for feedforward networkm with some nodes (with no parents) designated as inputs, and some nodes (with no children) designed as outputs. Examples of other feedforward network include <i style="font-weight: bold";>radial basis function networks</i>, which use a different activation function.</li>
+			</ul>
+
+			<h2>Radial-basis function (RBF) network</h2>
+			<ul>
+				<li>As in the field of mathematical modeling, a <i style="font-weight: bold";>radial basis function network</i> is an artificial neural network that uses radial basis functions as activation functions.</li>
+				<li>In general RBF networks have three layers: input layer, hidden layer and output layer. (As a matter of fact there are only three layers only in an RBF network).</li>
+				<li>Used for function approximation (i.e. their output is a real value)</li>
+				<li>One neuron in the input layer corresponds to each predictor variable. That means for instance: if there are 10 neurons in the input layer then there will be 10 variables i.e. 10 dimensional system it will be.</li>
+				<li>Each neuron in the hidden layer consists of a radial basis function (e.g. Gaussian) centered on a point with the same dimensions as the predictor variables.</li>
+				<li>The output layer has a weighted sum of outputs from the hidden layer to form the network outputs.</li>
+				<li>RBF networks are conceptually similar to k-nearest neighbor (k-NN) models.</li>
+				<li>The basic idea in the network is that a predicted target value of an item is likely to be about the same other items that have close values of the predictor variables.</li>
+
+				<div class="img-container"><br>
+					<img class="img" src="../img/radialBasisFunction.jpeg" alt="back-propagation" style="width:411px; height: 315px;">
+					<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Radial distance and radial basis function with confrontal-map</p>
+				</div>
+
+				<li>An RBF network positions one or more RBF neurons in the space described by the predictor variables (x1, x2 for example)</li>
+				<li>This space has as many dimensions as there are predictor variables.</li>
+				<li>In the calculation the euclidean distance is computed from the point being evaluated (e.g., the circle in the figure above) to the center of each neuron, and a radial basis function (RBf) (also called a kernel function) is applied to the distance to compute the weight (influence) for each neuron. </li>
+				<li>The further a neuron is from the point being evaluated, the less influence it has.</li>
+
+				<div class="img-container"><br>
+					<img class="img" src="../img/radialBasisFunction2.png" alt="back-propagation" style="width:572px; height: 311px;">
+					<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 22px;'>Structure of RBF networks. The classification only happens on the second phase, where linear combination of hidden function are driven to output layer.</p>
+				</div>
+
+				<li>h(x) is the Gaussian activation function with the pararmeters r and c, defined separately at each RBF unit. Where r = radius, and c = center </li>
+				<li>As the neural network basics are learning process is based on adjusting the parameters of the network to reproduce a set of input-output patterns.</li>
+				<li>In this network there are three types of parameters: the weight w between the hidden nodes and the output nodes, the center c of each neuron of the hidden layer and the unit width r.</li>
+				<li>Now the calculation of the parameters important in the RBF is done. Firstly in unit center (c), any clustering algorithm can be used to determine the RBF unit centers (e.g. K-means clustering).  </li>
+				<li>The cluster centers become the centers of the RBF units.</li>
+				<li>Secondly, when the RBF centers have been established, the width of each RBF unit can be calculated using the K-nearest neighbors algorithm.</li>
+				<li>A number of K is chosen, and for each center the K nearest centers are found.</li>
+				<li>The root-mean squared distance between the current cluster center and its K nearest neighbors is calculated, and this is the value chosen for the unit width (r). </li>
+				<li>Finally the calculation of weights is done. For each node in the hidden layer, now we have obtained the parameters r and c.</li>
+				<li>Now we compute the Euclidean disance from the point being evaluated to the center c of each neuron.</li>
+				<li>Then the radial basis function (RBF) is applied to the distance to compute the weight for each neuron. </li>
+			</ul>
+
+			<h2>Learning strategies of RBF</h2>
+			<ul>
+				<li>There are different methods available that can be used to calculate values at different steps in RBF network. Some of the commonly known algorithms are mentioned below.</li>
+				<li>Choosing the centers randomly from the training set, compute the spread for the RBF function using the normalization method and Find the weights using the pseudo-inverse method.</li>
+				<li>Secondly, clustering can be used for finding the centers, normalization to choose spreads and LMS algorithm for finding the weights (Hybrid Learning Process) </li>
+				<li>Third, gradient descent method for finding centers, spread and weights, by minimizing the (instantaneous) squared error. </li>
+
 			</ul>
 
 			<div>
