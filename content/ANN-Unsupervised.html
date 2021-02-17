@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<!-- 
+	# Should also look forward to make a personal dictionary also which can store words that I intend to save.
+	And the words should be saved inside a local file so that I can see how much database has been build and all. (like need to brain strom over it.)
+ -->
+<html>
+	<head> 
+		<meta charset='utf-8'>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Notes NNFL</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" href="../css/main.css">
+	
+	</head>
+	<body class='site-header'>
+
+		<div>
+			<h1>Un-Supervised learning in Artificial Neural Networks</h1>
+
+			<div>
+				<a class="click-me" href="ANN-Supervised.html"​>Previous</a>
+				<a class="click-me" href="#"​>Next</a>
+			</div>
+
+			<p>Topics to study are: </p>
+
+			<ol>
+				<li>Winner-take-all Networks</li>
+				<li>Hamming networks</li>
+				<li>Adaptive resonance theory (ART)
+					<ul>
+						<li>Types of ART</li>
+						<li>Basic of ART architecture</li>
+						<li>Advantage of ART</li>
+						<li>Limitations of ART</li>
+					</ul>
+				</li>
+				<li>Kohonen's self-organizing maps
+					<ul>
+						<li>Structure</li>
+						<li>Properties</li>
+						<li>Variables</li>
+						<li>Algorithm</li>
+						<li>Formulae</li>
+					</ul>
+				</li>
+			</ol>
+			
+
+			<h2>Winner-take-all networks</h2>
+			<ul>
+				<li>Winner-take-all is a computational principle applied in computational models of neural networks by which neurons in a layer compete with each other for activation.</li>
+				<li>In-short one can say that only the neuron with the highest activation stays active while all other neurons shut down.</li>
+				<li>It is a case of competitive learning in recurrent neural networks.</li>
+				<li>Basic working of the winner-take-all is as:
+					<ul>
+						<li>As the network takes input and starts its processing, weights get arranged, calculated and the activation values of the neurons start to compute at the output.</li>
+						<li>After some time, when the activation values are computed, only one node in the output layer will be active, namely the one corresponding to the strongest input.</li>
+						<li>This the network uses nonlinear inhibitio to pick out the largest of a set of inputs. </li>
+					</ul>
+				</li>
+				<li>Winner-take-all is a general computational primitive that can be implemented using different types of neural network models, including both continous-time and spiking networks.</li>
+				<li>Important examples include heirarchical models of vision, and models of selective attention and recognition.</li>
+				<li>They are also common in artificial neural networks and neuromorphic analog VLSI circuits.</li>
+				<li>It has been formally proven that the winner-take-all operation is computationally powerful compared to other non-linear operations, such as thresholding.</li>
+				<li>In many practical cases, there is not only a single neuron which becomes the only active one but there are exactly k neurons which become acgive for a fixed number k. This priniciple is referred to as k-winners-take-all.</li>
+				<li>In some sense it can be said that winner take all hypothesis suggests that once a technology or a firm gets ahead, it will do better and better over time, whereas lagging technology and firms will fall further behind.</li>
+			</ul>
+
+			<h2>Hamming Neural Network (HNN)</h2>
+			<ul>
+				<li>The Hamming network performs the task of pattern association, or classification, based on measuring the hamming distance.</li>
+				<li>Lippmann (1987) modelled a two layer bipolar network called Hamming neural network. The first layer is the Hamming net and the second llayer is the MAXNET. </li>
+				<li>The first layer is a feed forward type network which classifies the input patterns based on minimum Hamming distance. The Hamming distance (HD) between any two vectors is the number of components in which the vectors differ. </li>
+				<li>The Hamming net uses MAXNET in the second layer as a subnet to find the unit with the largest net input. The second layer operates as recurrent recall network which supresses all the outputs except the initially obtained maximum output of the first layer.</li>
+				<li>Using a Hamming network has several advantages:
+					<ul>
+						<li>It requires fewer connections than the Hopfield network.</li>
+						<li>It implements the "optimum minimum error classifier when bit errors are random and independent", that is, the network always converges and finds the output node with maximum value. </li>
+					</ul>
+				</li>
+
+				<div class="img-container"><br>
+					<img class="img" src="../img/hammingNetwork.png" alt="Hamming network" style="width:491px; height: 225px;">
+					<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 20px;'>A hamming Neural network</p>
+				</div>
+
+			</ul>
+
+			<h2>Adaptive Resonance Theory (ART) </h2>
+			<ul>
+				<li>Adaptive resonance theory is a type of neural network technique developed by Stephen Grossberg and Gail Carpenter in 1987. </li>
+				<li>The term "adaptive" and "resonance" used in this suggests that they are open to new learning (i.e. adaptive) without discarding the previous or the old information(i.e. resonance). </li>
+				<li>The basic ART uses unsupervised learning technique.</li>
+				<li>The ART networks are known to solve the <i>stability-plasticity</i> dilemma i.e., stability refers to their nature of memorizing the learning and plasticity refers to the fact that they are flexible to gain new information. </li>
+				<li>Having the nature of ART to solve stability-plasticity dilemma, they are always able to learn new input patterns without forgetting the past.</li>
+				<li>As in basic ART networks implement a clustering algorithm. Input is presented to the network and the algorithm checks whether it fits into one of the already stored clusters. If it fits then the input is added to the cluster that matches the most else a new cluster is formed. </li>
+			</ul>
+
+				<h3>Types of Adaptive Resonance Theory (ART) </h3>
+				<p>Carpenter and Grossberg developed different ART architectures as a result of 20 years of research. The ART's can be classified as follows:</p>
+				<ul>
+					<li><b>ART1 - </b>It is the simplest and the basic ART architecture. It is capable of clustering binary input values. </li>
+					<li><b>ART2 - </b>It is extension of ART1 that is capable of clustering continuous-values input data. </li>
+					<li><b>Fuzzy ART - </b>It is the augmentation of fuzzy logic and ART. </li>
+					<li><b>ARTMAP - </b>It is a supervised form of ART learning where one ART learns based on the previous ART module. It is also known as predictive ART. </li>
+					<li><b>FARTMAP - </b>This is a supervised ART architecture with Fuzzy logic included. </li>
+				</ul>
+
+				<h3>Basic of ART architecture</h3>
+				<ul>
+					<li>The ART theory is a type of neural network that is self-organizing compettive. It can be of both types, the unsupervised ones(ART1, ART2, ART3, etc) or the supervised ones (ARTMAP). Generally the supervised algorithms are named with suffix "MAP". </li>
+					<li>But the basic ART model is unsupervised in nature and consists of:
+						<ul>
+							<li>F1 layer or the comparison field (where the inputs are processed) </li>
+							<li>F2 layer or the recognition field (which consists of the clustering units) </li>
+							<li>The reset module (that acts as a control mechanism) </li>
+						</ul>
+					</li>
+					<li>The <b>F1 layer</b> accepts the inputs and performs some processing and transfers it to the F2 layer that beest matches with the classification factor.</li>
+					<li>There exist two sets of weighted interconnection for controlling the degree of similarity between the units in the F1 and the F2 layer. The <b>F2 layer</b> is a competitive layer. The cluster unit with the large net input becomes the candidate to learn the input pattern first and the rest F2 units are ignored.</li>
+					<li>The <b>reset unit</b> makes the decision whether or not the cluster unit is allowed to learn the input pattern depending on how similar is top-down weight vector is to the input vector and to the decision. This is called the vigilance test.</li>
+					<li>Thus we can say that the <b>vigilance parameter</b> helps to incorporate new memories or new information. Higher vigilance produces more detailed memories, lower vigilance produces more general memories. </li>
+					<li>Generally two types of learning exits, slow learning and fast learning. <br>
+						In fast learning, weight update during resonance occurs rapidly. It is used in ART1. <br>
+						In slow learning, the weight change occurs slowly relative to the duratiion of the learning trial. It is used in ART2.
+					</li>
+				</ul>
+
+				<h3>Advantages of ART</h3>
+				<ul>
+					<li>It exhibits stability and is not disturbed by a wide variety of inputs provided to its network. </li>
+					<li>It can be integrated and used with various other techniques to give more good results. </li>
+					<li>It can be used for various fields such as mobile robot control, face recognition, land cover classification, target recognition, medical diagnosis, signature verficiation, and clustering web users, etc. </li>
+					<li>It has got advantages over competitive learning (like bpnn etc.). The competitive learning lacks the capability to add new clusters when deemed necessary. </li>
+					<li>It does not guarantee stability in forming clusters. </li>
+					<li>It does not guarantee stability in forming clusters.</li>
+				</ul>
+				<h3>Limitations of ART</h3>
+				<ul>
+					<li>Some ART networks are inconsistent (like the Fuzzy ART and ART1) as they depend upon the order in which training data, or upon the learning rate. </li>
+				</ul>
+
+				<h2>Kohonen's self organising maps</h2>
+				<ul>
+					<li>Pioneered in 1082 by finnish professor and researcher Dr. Teuvo Kohonen, a self-organising map is an unsupervised learning model, intended for applications in which maintining a topology between input and output space is of importance.</li>
+					<li>The notable characteristic of this algorithm is that the input vectors that are close -- similar -- in high dimensional space are also mapped to nearby nodes in the 2D space.</li>
+					<li>It is in essence a method for dimensionality reduction, as it maps high-dimension inputs to a low (typically two) dimensional discretised representation and conserves the underlying strucutres of its input space. </li>
+					<li>A valuable detail is that the entire learning occurs without supervision i.e. the nodes are self-organising. They are called feature maps, as they are essentially retraining the features of the input data, and simply grouping themselves according to the similarity between one another.</li>
+					<li>This has a pragmatic (superior) value for visualising complex or large quantities of high dimensional data and representing the relationship between them into a low, typically two-dimensional, field to see if the given unlabelled data has any structure to it. </li>
+				</ul>
+
+				<h3>Structure</h3>
+
+				<div class="img-container"><br>
+					<img class="img" src="../img/kohonenAlgo.png" alt="Kohenon Architecture" style="width:376px; height: 270px;">
+					<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 20px;'>Kohonen Architecture</p>
+				</div>
+
+				<ul>
+					<li>A Self-Organizing Map (SOM) differs from typical ANNs both in its architecture and algorithmic properties. </li>
+					<li>Firstly, its structure comprises of a single-layer linear 2D grid of neurons, instad of series of layers.</li>
+					<li>All the nodes on this grid are connected directly to the input vector, <i>but not to one another</i>, meaning the nodes do not know the values of their neighbours, and only update the weights of their connections as a function of the given inputs.</li>
+					<li>The grid itself is the map that organises itself at each iteration as a function of the input of the input data.</li>
+					<li>As such, after clustering each node has its own (i,j) coordinate, which allows one to calculate the Euclidean distance between 2 nodes by means of the Pythagorean theorem. </li>
+					
+					<div class="img-container"><br>
+						<img class="img" src="../img/kohonenAlgo2.png" alt="Kohenon Architecture" style="width:376px; height: 270px;">
+						<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 20px;'>(a)</p>
+					</div>
+					<div class="img-container">
+						<img class="img" src="../img/kohonenAlgo3.png" alt="Kohenon Architecture" style="width:376px; height: 270px;">
+						<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 20px;'>(b)</p>
+						<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 20px;'>Kohonen network's nodes can be in a (a) rectangular or (b) hexagonal topology. </p>
+					</div>
+				</ul>
+
+				<h3>Properties</h3>
+				<ul>
+					<li>A self-organising map, additionally, uses competitive learning as opposed to error-correction learning, to adjust it weights. This means that only a <i>single node</i> is activated at each iteration in which the features of an instance of the input vector are presented to the neural network, as all nodes compete for the right to respond to the input.</li>
+					<li>The chosen node -- the Best Matching Unit (BMU) -- is selected according to the similarity, between the current input values and all the nodes in the grid. </li>
+					<li>The node with the smallest Euclidean difference between the input vector and all nodes is chosen, along with its neighbouring nodes within certain radius, to have their position slightly adjusted to match the input vector.</li>
+					<li>By goind trough all the nodes present on the grid, the entire grid eventually matches the complete input dataset, with similar nodes grouped together towards one area, and dissimilar ones separated.</li>
+
+					<div class="img-container"><br>
+						<img class="img" src="../img/kohonenModel.png" alt="Kohenon Architecture" style="width:376px; height: 270px;">
+						<p style='text-align: center; font-family: "Comic Sans MS", "Comic Sans", cursive; font-size: 20px;'>A Kohonen model with the BMU in yellow, the layers inside the neighbourhood radius in pink and purple, and the nodes outside in blue.</p>
+					</div>
+				</ul>
+
+				<h3>Variables</h3>
+				<ul>
+					<li>t is the current iteration</li>
+					<li>n is the iteration limit, i.e. the total number of iterations the network can undergo</li>
+					<li>λ is the time constant, used to decay the radius and learning rate</li>
+					<li>i is the row coordinate of the nodes grid</li>
+					<li>j is the column coordinate of the nodes grid</li>
+					<li>d is the distance between a node and the BMU</li>
+					<li>w is the weight vector</li>
+					<li>w_ij(t) is the weight of the connection between the nodes i,j in the grid, and the input vector’s instance at the iteration t</li>
+					<li>x is the input vector</li>
+					<li>x(t) is the input vector’s instance at iteration t</li>
+					<li>α(t) is the learning rate, decreasing with time in the interval [0,1], to ensure the network converges</li>
+					<li>β_ij(t) is the neighbourhood function, monotonically decreasing and representing a node i, j’s distance from the BMU, and the influence it has on the learning at step t</li>
+					<li>σ(t) is the radius of the neighbourhood function, which determines how far neighbour nodes are examined in the 2D grid when updating vectors. It is gradually reduced over time</li>
+				</ul>
+
+				<h3>Algorithm</h3>
+				<ol>
+					<li>Initialise each node’s weight w_ij to a random value</li>
+					<li>Select a random input vector x_k</li>
+					<li>Repeat point 4. and 5. for all nodes in the map:</li>
+					<li>Compute Euclidean distance between the input vector x(t) and the weight vector w_ij associated with the first node, where t, i, j = 0</li>
+					<li>Track the node that produces the smallest distance t</li>
+					<li>Find the overall Best Matching Unit (BMU), i.e. the node with the smallest distance from all calculated ones</li>
+					<li>Determine topological neighbourhood βij(t) its radius σ(t) of BMU in the Kohonen Map</li>
+					<li>Repeat for all nodes in the BMU neighbourhood: Update the weight vector w_ij of the first node in the neighbourhood of the BMU by adding a fraction of the difference between the input vector x(t) and the weight w(t) of the neuron</li>
+					<li>Repeat this whole iteration until reaching the chosen iteration limit t=n</li>
+					<p>Step 1 is the initialisation phase, while step 2–9 represent the training phase</p>
+				</ol>
+
+				<h3>Formulae</h3>
+				<ul>
+					<li>The updates and changes to the variables are done according to the following formulae:</li>
+					<li>The weights within the neighbourhood are updated as:
+
+					<div class="img-container"><br>
+						<img class="img" src="../img/kohonenWeightEqu.png" alt="Kohenon Architecture" style="width:494px; height: 91px;">
+					</div><br>					
+					</li>
+
+					<li>The first equation tell us that the new updated weight w<sub>ij</sub>(t+1) for the node i,j is equal to the sum of the old weight w<sub>ij</sub>(t) and a fraction of the difference between the old weight and the input vector x(t). In other word, the weight vector is 'moved' closer towards the input vector. Another important element to note is that the updated weight will be proportional to the 2D distance between the nodes in the neighbourhood radius and the BMU. </li>
+					<li>The first equation does not account for the influence of the learning being proportional to the distance a node is from the MBU. The updated weight should take into factor that the effect of the learning is close to none at the extremities fo the neighbourhood, as the amount of learning should decrease with distance. Therefore, the second equation adds the extra neighbourhood function factor of βij(t), and is the more precise in-depth one. </li>
+
+					<div class="img-container"><br>
+						<img class="img" src="../img/kohonenWeightEquGraph.png" alt="Kohenon Architecture" style="width:485px; height: 400px;">
+					</div><br>
+
+					<li>The radius and learning are both similarly and exponentially decayed with time.
+					<div class="img-container"><br>
+						<img class="img" src="../img/kohonenLearningRate.png" alt="Kohenon Architecture" style="width:485px; height: 116px;">
+					</div><br>
+					</li>
+
+					<li>The neighbourhood function's influence β<sub>i</sub>(t) is calculated by: 
+					<div class="img-container"><br>
+						<img class="img" src="../img/kohonenNeighbourhoodFunc.png" alt="Kohenon Architecture" style="width:494px; height: 91px;">
+					</div><br>
+					</li>
+
+					<li>The Euclidean distance between each node's weight vector and the current input instance is calculated by the Pythagoran formula
+					<div class="img-container"><br>
+						<img class="img" src="../img/kohonenEucDistance.png" alt="Kohenon Architecture" style="width:383px; height: 112px;">
+					</div><br>
+					</li>
+
+					<li>The BMU is selected from all the node's calculated distances as the one with the smallest
+					<div class="img-container"><br>
+						<img class="img" src="../img/kohonenBMUCal.png" alt="Kohenon Architecture" style="width:494px; height: 107px;">
+					</div><br>
+					</li>
+				</ul>
+
+			<div>
+				<a class="click-me" href="ANN-Supervised.html"​>Previous</a>
+				<a class="click-me" href="#"​>Next</a>
+			</div>
+
+		</div>
+	</body>
+</html>
